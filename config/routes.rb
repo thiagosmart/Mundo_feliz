@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   resources :adminstradors
 
-root to:"login#index"
-  get "/home", to: "home#index"
+   root to:"login#index"
+    get "/home", to: "home#index"
 
 
   resources :pedidos do 
@@ -17,8 +17,10 @@ root to:"login#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-get'/login', to: "login#index"
+  get'/login', to: "login#index"
 
-post'/login/logar', to: "login#logar"
+   post'/login/logar', to: "login#logar"
+
+   get'/sair', to: "login#sair"
 
 end
