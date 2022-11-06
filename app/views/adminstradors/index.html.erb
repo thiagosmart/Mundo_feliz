@@ -1,0 +1,33 @@
+<div class="page-header">
+  <%= link_to new_adminstrador_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Adminstrador
+  <% end %>
+  <h1>Listing adminstradors</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Senha</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @adminstradors) do |adminstrador| %>
+            <td><%= adminstrador.nome %></td>
+            <td><%= adminstrador.email %></td>
+            <td><%= adminstrador.senha %></td>
+            <td><%= link_to 'Show', adminstrador %></td>
+        <td><%= link_to 'Edit', edit_adminstrador_path(adminstrador) %></td>
+        <td><%= button_to 'Destroy', adminstrador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,33 @@
+<div class="page-header">
+  <%= link_to pedidos_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_pedido_path(@pedido), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Mostrar pedido</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Cliente:</dt>
+  <dd><%= @pedido.cliente.nome %></dd>
+
+  <dt>Valor total R$:</dt>
+  <dd><%= @pedido.valor_total %></dd>
+
+  <dd>
+   <%= @pedido.pedido_produtos.each do |pp|%>
+    <li>
+    <%= pp.produto.nome %> 
+    - Valor Unidade  R$ <%= pp.produto.valor%>
+    
+    </li>
+   <% end %> 
+   
+   </dd>
+
+  
+
+</dl>
